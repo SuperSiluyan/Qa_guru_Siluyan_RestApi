@@ -1,15 +1,13 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
-
-
-import java.util.Arrays;
+import testBases.TestBase;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.*;
 
-public class ResourceApiTest {
+public class ResourceApiTest extends TestBase {
 
     @Test
     void listResourceTest() {
@@ -19,7 +17,7 @@ public class ResourceApiTest {
                 .log().uri()
                 .log().method()
                 .when()
-                .get("https://reqres.in/api/unknown")
+                .get("/unknown")
                 .then()
                 .log().status()
                 .log().body()
@@ -34,7 +32,7 @@ public class ResourceApiTest {
                 .log().uri()
                 .log().method()
                 .when()
-                .get("https://reqres.in/api/unknown/2")
+                .get("/unknown/2")
                 .then()
                 .log().status()
                 .log().body()
@@ -49,7 +47,7 @@ public class ResourceApiTest {
                 .log().uri()
                 .log().method()
                 .when()
-                .get("https://reqres.in/api/unknown/23")
+                .get("/unknown/23")
                 .then()
                 .log().status()
                 .statusCode(404);
@@ -65,7 +63,7 @@ public class ResourceApiTest {
                 .body(authBody)
                 .contentType(JSON)
                 .when()
-                .post("https://reqres.in/api/users")
+                .post("/users")
                 .then()
                 .log().status()
                 .log().body()
@@ -84,7 +82,7 @@ public class ResourceApiTest {
                 .body(authBody)
                 .contentType(JSON)
                 .when()
-                .put("https://reqres.in/api/users/2")
+                .put("/users/2")
                 .then()
                 .log().status()
                 .log().body()
