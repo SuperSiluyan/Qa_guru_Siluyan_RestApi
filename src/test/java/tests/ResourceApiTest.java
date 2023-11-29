@@ -82,7 +82,7 @@ public class ResourceApiTest extends TestBase {
                 .body(authBody)
                 .contentType(JSON)
                 .when()
-                .put("/users/2")
+                .put(" /users/2")
                 .then()
                 .log().status()
                 .log().body()
