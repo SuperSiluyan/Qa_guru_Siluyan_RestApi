@@ -23,7 +23,6 @@ public class RecourceApiExtendTest extends TestBase {
         authBody.setName("morpheus");
         authBody.setJob("leader the best");
 
-
         DataUserLombokModel response = step("Update user request", () ->
                 given(updateRequestSpec)
                         .body(authBody)
@@ -77,7 +76,6 @@ public class RecourceApiExtendTest extends TestBase {
                         .spec(deleteResponseSpec));
     }
 
-
     @Test
     void registerSuccessTest() {
         RegisteredBodyTestModel authBody = new RegisteredBodyTestModel();
@@ -95,7 +93,5 @@ public class RecourceApiExtendTest extends TestBase {
 
         step("Verify response", () ->
                 assertEquals("QpwL5tke4Pnpja7X4", response.getToken()));
-
     }
-
 }
