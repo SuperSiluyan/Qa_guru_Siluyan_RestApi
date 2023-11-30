@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class DataUserLombokModel {
-    String name;
+    String name,job,updatedAt;
 }

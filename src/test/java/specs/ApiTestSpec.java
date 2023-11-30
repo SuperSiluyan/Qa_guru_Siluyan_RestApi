@@ -24,18 +24,51 @@ public class ApiTestSpec {
                 .expectStatusCode(200)
                 .build();
 
-        public static RequestSpecification listRequestSpec = with()
+        public static RequestSpecification createRequestSpec = with()
                 .filter(withCustomTemplates())
                 .log().uri()
                 .log().method()
-                .baseUri("https://reqres.in")
-                .basePath("/api/unknown");
+                .log().body()
+                .contentType(JSON);
 
-        public static ResponseSpecification listResponseSpec = new ResponseSpecBuilder()
+        public static ResponseSpecification createResponseSpec = new ResponseSpecBuilder()
                 .log(LogDetail.STATUS)
                 .log(LogDetail.BODY)
-                .expectStatusCode(200)
+                .expectStatusCode(201)
                 .build();
+
+
+        public static RequestSpecification pageNotFoundRequestSpec = with()
+                .filter(withCustomTemplates())
+                .log().uri()
+                .log().method()
+                .log().body()
+                .contentType(JSON);
+
+
+        public static ResponseSpecification pageNotFoundResponseSpec = new ResponseSpecBuilder()
+                .log(LogDetail.STATUS)
+                .log(LogDetail.BODY)
+                .expectStatusCode(404)
+                .build();
+
+
+        public static RequestSpecification deleteRequestSpec = with()
+                .filter(withCustomTemplates())
+                .log().uri()
+                .log().method()
+                .log().body()
+                .contentType(JSON);
+
+
+        public static ResponseSpecification deleteResponseSpec = new ResponseSpecBuilder()
+                .log(LogDetail.STATUS)
+                .log(LogDetail.BODY)
+                .expectStatusCode(204)
+                .build();
+
+
+
 }
 
 
