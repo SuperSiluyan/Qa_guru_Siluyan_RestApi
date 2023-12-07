@@ -43,11 +43,11 @@ test {
     useJUnitPlatform()
 }
 
-sourceSets.all {
-    configurations.getByName(runtimeClasspathConfigurationName) {
-        attributes.attribute(Attribute.of("org.gradle.jvm.environment", String), "standard-jvm")
-    }
-    configurations.getByName(compileClasspathConfigurationName) {
-        attributes.attribute(Attribute.of("org.gradle.jvm.environment", String), "standard-jvm")
-    }
-}
+//sourceSets.all {
+//    configurations.getByName(runtimeClasspathConfigurationName) {
+//        attributes.attribute(Attribute.of("org.gradle.jvm.environment", String), "standard-jvm")
+//    }
+//    configurations.getByName(compileClasspathConfigurationName) {
+//        attributes.attribute(Attribute.of("org.gradle.jvm.environment", String), "standard-jvm")
+//    }
+//}
