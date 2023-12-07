@@ -13,7 +13,7 @@ public class ProfilePage {
 
     public ProfilePage profilePageOpen() {
         open("/profile");
-        userName.shouldHave(text("Bteeny"));
+        userName.shouldHave(text("Siluyan"));
         return this;
     }
 

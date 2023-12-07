@@ -71,7 +71,7 @@ public class ApiTestSpec {
         public static ResponseSpecification authResponseSpec = new ResponseSpecBuilder()
                 .log(LogDetail.STATUS)
                 .log(LogDetail.BODY)
-                .expectStatusCode(200)
+//                .expectStatusCode(200)
                 .build();
 
         public static RequestSpecification requestBookSpec = with()

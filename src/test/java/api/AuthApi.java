@@ -13,7 +13,7 @@ public class AuthApi {
 
     public Response getAuth() {
         LoginTestModel authBody = new LoginTestModel();
-        authBody.setUsername("Siluyan");
+        authBody.setUserName("Siluyan");
         authBody.setPassword("Sil-321@rockAnime");
 
         return given(createRequestSpec)
