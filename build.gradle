@@ -39,8 +39,10 @@ dependencies {
     )
 }
 
-test {
-    useJUnitPlatform()
+task configurate_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("Configurate")
+    }
 }
 
 //sourceSets.all {

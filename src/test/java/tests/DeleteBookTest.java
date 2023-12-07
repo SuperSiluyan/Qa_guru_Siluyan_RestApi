@@ -4,6 +4,8 @@ import api.AuthApi;
 import api.BookApi;
 import helpers.WithLogin;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pageObjects.ProfilePage;
 import testBases.TestBaseDemoQa;
@@ -19,6 +21,8 @@ public class DeleteBookTest extends TestBaseDemoQa {
     ProfilePage profilePage = new ProfilePage();
 
     @Test
+    @Tag("Configurate")
+    @DisplayName("Delete book from profile")
     @WithLogin
     void deleteBookFromProfileTest() {
 
