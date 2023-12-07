@@ -68,6 +68,18 @@ public class ApiTestSpec {
                 .build();
 
 
+        public static ResponseSpecification authResponseSpec = new ResponseSpecBuilder()
+                .log(LogDetail.STATUS)
+                .log(LogDetail.BODY)
+                .expectStatusCode(200)
+                .build();
+
+        public static RequestSpecification requestBookSpec = with()
+                .filter(withCustomTemplates())
+                .log().uri()
+                .log().method()
+                .contentType(JSON);
+
 
 }
 
